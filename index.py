@@ -50,22 +50,25 @@ st.markdown(
 )
 
 # You can replace the paths below with your own local paths or URLs for the logos.
-logo1 = "./images/logo-horizontal-white-bg.png"  # Example path
-logo2 = "./images/logo-spa.png"  # Example path
-logo3 = "./images/logo-hk.png"  # Example path
+logo_iyq = "./images/logo-horizontal-white-bg.png"  
+logo_spa = "./images/logo-spa.png"                 
+logo_hk = "./images/logo-hk.png" 
+logo_aepcens = "./images/logo-aepcens-inverted.png"
 
 # Display the logos
-col1, col2, col3, col4, col4 = st.columns(5)
+col1, col2, col3, col4, col5, col6 = st.columns(6)
 with col1:
-    st.image(logo1, use_container_width=True)
+    st.image(logo_iyq, use_container_width=True)
 with col2:
-    st.empty()  
+    st.empty()
 with col3:
-    st.image(logo2, width=150)
+    st.image(logo_aepcens, width=170)  
 with col4:
-    st.empty()  
-with col4:
-    st.image(logo3, use_container_width=True)
+    st.image(logo_spa, width=170)
+with col5:
+    st.empty()
+with col6:
+    st.image(logo_hk, use_container_width=True)
 
 # Content Section
 st.markdown('<div class="content">', unsafe_allow_html=True)
@@ -145,7 +148,7 @@ programme_data = {
 
 
 # Display the table as a DataFrame
-programme_df = pd.DataFrame(programme_data, index=1+np.arange(len(programme_data["Affiliation"])))
+programme_df = pd.DataFrame(programme_data, index= 1 + np.arange(len(programme_data["Affiliation"])))
 
 # Styling the DataFrame
 def highlight_cells(val):
