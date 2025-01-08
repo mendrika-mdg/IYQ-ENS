@@ -18,22 +18,10 @@ st.markdown(
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: white;
+            background-color: white !important;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background-color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
+
 
         /* Fixed Footer */
         .footer {
@@ -73,7 +61,7 @@ logo3 = "./images/logo-hk.png"  # Example path
 # Display the logos
 col1, col2, col3, col4, col4 = st.columns(5)
 with col1:
-    st.image(logo1, width=300, use_column_width='auto')
+    st.image(logo1, use_container_width=True)
 with col2:
     st.empty()  
 with col3:
@@ -81,7 +69,7 @@ with col3:
 with col4:
     st.empty()  
 with col4:
-    st.image(logo3, width=300, use_column_width='auto')
+    st.image(logo3, use_container_width=True)
 
     
 
@@ -197,7 +185,7 @@ st.write(
 
     L'entree est gratuite et tout le monde est le bienvenue.
 
-    Veuillez contacter mendrika@aims.ac.za ou andoniaina@gmail.com pour toutes requetes.
+    Veuillez contacter mendrika@aims.ac.za ou andoniainarajaonari@gmail.com pour toutes requetes.
     """
 )
 
