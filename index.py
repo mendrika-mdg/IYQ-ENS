@@ -4,24 +4,20 @@ import numpy as np # type: ignore
 
 # Set page configuration
 st.set_page_config(
-    page_title="Séminaire IYQ 2025",
+    page_title="Séminaire IYQ ENS 2025",
     page_icon="⚛",
     layout="wide",
 )
-
 
 # Custom CSS for fixed header and footer
 st.markdown(
     """
     <style>
         /* General body styling */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        html, body, [data-testid="stAppViewContainer"], [data-testid="stSidebar"] {
             background-color: white !important;
+            color: black !important;
         }
-
-
 
         /* Fixed Footer */
         .footer {
@@ -29,7 +25,7 @@ st.markdown(
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: black;
+            background-color: black !important;            
             color: white;
             padding: 10px;
             border-top: 1px solid #ddd;
@@ -71,8 +67,6 @@ with col4:
 with col4:
     st.image(logo3, use_container_width=True)
 
-    
-
 # Content Section
 st.markdown('<div class="content">', unsafe_allow_html=True)
 
@@ -85,10 +79,9 @@ description = (
     "Rejoignez-nous pour célébrer l'Année Internationale des Sciences et Technologies Quantiques, "
     "avec des conférences et des discussions passionnantes sur la physique quantique, la physique des lasers, "
     "l'apprentissage automatique, l'astronomie et la vulgarisation.\n\n"
-    "Dans le cadre de cet événement, nous organisons une cérémonie pour honorer les membres fondateurs du parcours Physique-Chimie — **Dr Charles Ratsifaritana**, **Dr Faneva Randrianandraina**, **Dr René Rasoanaivo**, **Dr Henri Rasolondramanitra**,  **Dr Herimanda Ramilison**, **Prof. Judith Razafimbelo** et **Prof. Kristiane Rakotobe** — pour leurs contributions inestimables à l’établissement de ce parcours à l’ENS Antananarivo. "
+    "Dans le cadre de cet événement, nous organisons une cérémonie pour honorer les membres fondateurs du parcours Physique-Chimie — **Dr Charles Ratsifaritana**, **Dr Faneva Randrianandraina**, **Dr René Rasoanaivo**, **Dr Henri Rasolondramanitra**, **Dr Herimanda Ramilison**, **Prof. Judith Razafimbelo** et **Prof. Kristiane Rakotobe**— pour leurs contributions inestimables à l’établissement de ce parcours à l’ENS Antananarivo. "
     "Leur vision collective et leur dévouement ont été déterminants dans la création de la base académique qui a permis à de nombreux étudiants de se former, et nous souhaitons leur exprimer notre plus profonde gratitude."
 )
-
 
 # Header
 st.title(seminar_title)
@@ -107,11 +100,11 @@ programme_data = {
         "M. RAOGNINIRINA Joseph Carthy",
         "Représentant de l’ENS",
         "M. RATSIFARITANA Charles, PhD",
+        "M. RANDRIANANDRAINA Faneva, PhD",
+        "M. RAJAONARIVELO Andoniaina",
         "M. Herimampionona Zeze Franckie",
         "M. RAKOTOMANGA Mendrika",
         "Mme. RATSIMANDRESY Dina Miora, PhD",
-        "M. RAJAONARIVELO Andoniaina",
-        "M. RANDRIANANDRAINA Faneva, PhD",
         "Equipe organisatrice",
         "Tous les Invités",
         "Tous les Invités",
@@ -121,11 +114,11 @@ programme_data = {
         "Président de l’AEPCENS",
         "ENS",
         "Professeur fondateur du parcours PC",
+        "Professeur fondateur du parcours PC",
+        "Ancien Élève ENS, Directeur de l’observatoire de Besely",
         "Président de l’association Sciences Physiques et Avenir",
         "Ancien Élève ENS, University of Leeds",
         "Ancienne Élève ENS, MRC-LMB, Cambridge",
-        "Ancien Élève ENS, Directeur de l’observatoire de Besely",
-        "Professeur fondateur du parcours PC",
         "N/A",
         "N/A",
         "N/A",
@@ -135,23 +128,49 @@ programme_data = {
         "Prise de parole",
         "Prise de parole",
         "Physique Quantique & Histoire du Parcours PC",
-        "Outreach & Education",
-        "Intelligence Artificielle et Apprentissage Automatique",
-        "Physique des Lasers & Biologie Moléculaire",
-        "Astronomie Observationnelle",
         "Astrophysique",
+        "Astronomie Observationnelle",
+        "Outreach & Education",
+        "Intelligence Artificielle et Data Science",
+        "Physique des Lasers & Biologie Moléculaire",
         "Cérémonie de remerciement",
         "Prise de Photo",
         "Cocktail",
     ],
     "Durée (minutes)": [
-        5, 5, 5, 30, 10, 10, 10, 10, 15, 15, 5, "N/A"
+        5, 5, 5, 30, 15, 10, 10, 10, 10, 15, 5, 30
     ],
 }
 
+
+
 # Display the table as a DataFrame
 programme_df = pd.DataFrame(programme_data, index=1+np.arange(len(programme_data["Affiliation"])))
-st.table(programme_df)
+
+# Styling the DataFrame
+def highlight_cells(val):
+    # Set background color based on conditions
+    return 'background-color: lightblue; color: black;'
+
+# Apply styling
+styled_df = programme_df.style.applymap(highlight_cells)
+
+styled_df.set_table_styles(
+    [{'selector': 'thead th', 
+      'props': [('background-color', '#4CAF50'), 
+                ('color', 'white'), 
+                ('font-size', '16px'), 
+                ('text-align', 'center')]},
+     {'selector': 'tbody th',  # Styling the index (row labels)
+      'props': [('background-color', '#f2f2f2'), 
+                ('color', 'black'), 
+                ('font-weight', 'bold'), 
+                ('font-size', '14px')]}],
+    axis=1
+)
+
+# Display the styled dataframe using st.table
+st.table(styled_df)
 
 # Add Join Information
 st.markdown("## 🔗 Rejoindre le Séminaire")
@@ -183,9 +202,9 @@ st.write(
     Ensemble, nous célébrerons le passé et explorerons l'avenir de la physique 
     et de ses applications.
 
-    L'entree est gratuite et tout le monde est le bienvenue.
+    L'entrée est gratuite et tout le monde est le bienvenue.
 
-    Veuillez contacter mendrika@aims.ac.za ou andoniainarajaonari@gmail.com pour toutes requetes.
+    Veuillez contacter mendrika@aims.ac.za ou andoniainarajaonari@gmail.com pour toutes requêtes.
     """
 )
 
@@ -196,7 +215,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 st.markdown(
     """
     <div class="footer">
-        Conçu par Mendrika Rakotomanga | <a href="mailto:mendrika@aims.ac.za">mendrika@aims.ac.za</a>
+        © Mendrika Rakotomanga 2025 | <a href="mailto:mendrika@aims.ac.za">mendrika@aims.ac.za</a>
     </div>
     """,
     unsafe_allow_html=True,
