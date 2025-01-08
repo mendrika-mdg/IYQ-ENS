@@ -23,10 +23,10 @@ st.write(description)
 st.subheader("📋 Seminar Schedule")
 schedule = {
     "12:15 - 12:25": "Welcome and Opening Remarks",
-    "12:25 - 12:45": "Keynote 1: Advancing Thunderstorm Prediction - Mendrika Rakotomanga",
-    "12:45 - 13:05": "Keynote 2: New-generation Satellite Data for Nowcasting - Dr. Stephan Bojinski",
+    "12:25 - 12:45": "Keynote 1: Quantum Physics - Dr. Charles Ratsifaritana",
+    "12:45 - 13:05": "Keynote 2: Machine Learning and Artificial Intelligence - Mendrika Rakotomanga",
     "13:05 - 13:25": "Panel Discussion: Quantum Physics, Machine Learning, and Astronomy",
-    "13:25 - 13:45": "Keynote 3: Laser Physics and Microscopy - Dina Ratsimandresy",
+    "13:25 - 13:45": "Keynote 3: Laser Physics and Microscopy - Dr Dina Ratsimandresy",
     "13:45 - 14:15": "Closing Remarks and Networking",
 }
 for time, session in schedule.items():
@@ -38,16 +38,16 @@ speakers = [
     {
         "name": "Mendrika Rakotomanga",
         "title": "Postgraduate Researcher, University of Leeds",
-        "talk": "Advancing Thunderstorm Prediction: The Role of AI and Satellite Data in Africa",
+        "talk": "Machine Learning and Artificial Intelligence",
     },
     {
-        "name": "Dr. Stephan Bojinski",
-        "title": "Scientist, EUMETSAT",
-        "talk": "New-generation Satellite Data for Nowcasting from Meteosat Third Generation",
+        "name": "Dr. Charles Ratsifaritana",
+        "title": "Lecturer, ENS",
+        "talk": "Quantum Physics",
     },
     {
-        "name": "Dina Ratsimandresy",
-        "title": "Researcher, Medical Research Council, Laboratory of Molecular Biology",
+        "name": "Dr Dina Ratsimandresy",
+        "title": "Postdoctoral Researcher, Medical Research Council, Laboratory of Molecular Biology, Cambridge",
         "talk": "Laser Physics and Microscopy",
     },
 ]
