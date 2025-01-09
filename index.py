@@ -70,9 +70,12 @@ description = (
     "Rejoignez-nous pour célébrer l'Année Internationale des Sciences et Technologies Quantiques, "
     "avec des conférences et des discussions passionnantes sur la physique quantique, la physique des lasers, "
     "l'apprentissage automatique, l'astronomie et la vulgarisation.\n\n"
-    "Dans le cadre de cet événement, nous organisons une cérémonie pour honorer les membres fondateurs du parcours Physique-Chimie — **Dr Charles Ratsifaritana**, **Dr Faneva Randrianandraina**, **Dr René Rasoanaivo**, **Dr Henri Rasolondramanitra**, **Dr Herimanda Ramilison**, **Prof. Judith Razafimbelo** et **Prof. Kristiane Rakotobe**— pour leurs contributions inestimables à l’établissement de ce parcours à l’ENS Antananarivo. "
-    "Leur vision collective et leur dévouement ont été déterminants dans la création de la base académique qui a permis à de nombreux étudiants de se former, et nous souhaitons leur exprimer notre plus profonde gratitude."
+    "Dans le cadre de cet événement, nous organisons une cérémonie pour honorer les membres fondateurs du parcours Physique-Chimie — **Dr Charles Ratsifaritana**, **Dr Faneva Randrianandraina**, **Dr René Rasoanaivo**, **Dr Henri Rasolondramanitra**, **Dr Herimanda Ramilison**, **Prof. Judith Razafimbelo** et **Prof. Kristiane Rakotobe** — pour leurs contributions inestimables à l’établissement de ce parcours à l’ENS Antananarivo. "
+    "Leur vision collective et leur dévouement ont été déterminants dans la création d’une base académique solide, "
+    "permettant à de nombreux étudiants de se former, de s’inspirer et, à leur tour, d’impacter les élèves malgaches. "
+    "Nous leur exprimons notre plus profonde gratitude."
 )
+
 
 # Header
 st.title(seminar_title)
@@ -154,13 +157,33 @@ st.write(
     Nous avons hâte d'accueillir tous les participants à ce séminaire. 
     Ensemble, nous célébrerons le passé et explorerons l'avenir de la physique 
     et de ses applications.
-
-    L'entrée est gratuite et tout le monde est le bienvenue.
-
-    Veuillez contacter mendrika@aims.ac.za ou andoniainarajaonari@gmail.com pour toutes requêtes.
     """
 )
 
+# Custom success message with black text
+st.markdown(
+    """
+    <div style="background-color: #dff0d8; color: black; padding: 10px; border-radius: 5px; font-weight: bold;">
+        L'entrée est gratuite et tout le monde est le bienvenue.
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+
+st.markdown("")
+
+# Custom warning message with black text
+st.markdown(
+    """
+    <div style="background-color: #fcf8e3; color: black; padding: 10px; border-radius: 5px; font-weight: bold;">
+        Veuillez contacter <a href="mailto:mendrika@aims.ac.za" style="color: blue;">mendrika@aims.ac.za</a> ou 
+        <a href="mailto:andoniainarajaonari@gmail.com" style="color: blue;">andoniainarajaonari@gmail.com</a> 
+        pour toutes requêtes.
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 
 
 
