@@ -54,30 +54,18 @@ logo_iyq = "./images/logo-horizontal-white-bg.png"
 logo_spa = "./images/logo-spa.png"                 
 logo_hk = "./images/logo-hk.png" 
 logo_aepcens = "./images/logo-aepcens-inverted.png"
+partners = "./images/partners-transformed.png"
 
-# Display the logos
-col1, col2, col3, col4, col5, col6 = st.columns(6)
-with col1:
-    st.image(logo_iyq, use_container_width=True)
-with col2:
-    st.empty()
-with col3:
-    st.image(logo_aepcens, width=170)  
-with col4:
-    st.image(logo_spa, width=170)
-with col5:
-    st.empty()
-with col6:
-    st.image(logo_hk, use_container_width=True)
+st.image(partners, use_container_width=True)
 
 # Content Section
 st.markdown('<div class="content">', unsafe_allow_html=True)
 
 # Seminar Information
-seminar_title = "Célébration de la Science Quantique et Hommage aux fondateurs du parcours Physique-Chimie de l'ENS"
+seminar_title = "Célébration de la Science Quantique et Hommage aux Fondateurs du Parcours Physique-Chimie de l'ENS Antananarivo"
 date = "16 janvier 2025"
 time = "13:15 - 15:15 (UTC+3)"
-location = "Hybride (En ligne & Petit Amphi de l'ENS Ampefiloha)"
+location = "Hybride (Zoom & Petit Amphi ENS Ampefiloha)"
 description = (
     "Rejoignez-nous pour célébrer l'Année Internationale des Sciences et Technologies Quantiques, "
     "avec des conférences et des discussions passionnantes sur la physique quantique, la physique des lasers, "
@@ -96,85 +84,47 @@ st.write(description)
 # Programme Section
 st.markdown("## 📋 Programme du Séminaire")
 
-# Programme Table
-programme_data = {
-    "Intervenant": [
-        "M. RIJARIMANANA Tiana, PhD",
-        "M. RAOGNINIRINA Joseph Carthy",
-        "Représentant de l’ENS",
-        "M. RATSIFARITANA Charles, PhD",
-        "M. RANDRIANANDRAINA Faneva, PhD",
-        "M. RAJAONARIVELO Andoniaina",
-        "M. Herimampionona Zeze Franckie",
-        "M. RAKOTOMANGA Mendrika",
-        "Mme. RATSIMANDRESY Dina Miora, PhD",
-        "Equipe organisatrice",
-        "Tous les Invités",
-        "Tous les Invités",
-    ],
-    "Affiliation": [
-        "Chef Parcours PC, ENS",
-        "Président de l’AEPCENS",
-        "ENS",
-        "Professeur fondateur du parcours PC",
-        "Professeur fondateur du parcours PC",
-        "Ancien Élève ENS, Directeur de l’observatoire de Besely",
-        "Président de l’association Sciences Physiques et Avenir",
-        "Ancien Élève ENS, University of Leeds",
-        "Ancienne Élève ENS, MRC-LMB, Cambridge",
-        "N/A",
-        "N/A",
-        "N/A",
-    ],
-    "Thème": [
-        "Prise de parole",
-        "Prise de parole",
-        "Prise de parole",
-        "Physique Quantique & Histoire du Parcours PC",
-        "Astrophysique",
-        "Astronomie Observationnelle",
-        "Outreach & Education",
-        "Intelligence Artificielle et Data Science",
-        "Physique des Lasers & Biologie Moléculaire",
-        "Cérémonie de remerciement",
-        "Prise de Photo",
-        "Cocktail",
-    ],
-    "Durée (minutes)": [
-        5, 5, 5, 30, 15, 10, 10, 10, 10, 15, 5, 30
-    ],
-}
+programme_data = [
+    ["Dr. RIJARIMANANA Tiana", "Chef Parcours PC, ENS", "Prise de parole", "5"],
+    ["M. RAOGNINIRINA Joseph Carthy", "Président de l’AEPCENS", "Prise de parole", "5"],
+    ["Représentant de l’ENS", "ENS", "Prise de parole", "5"],
+    ["Dr RATSIFARITANA Charles", "Enseignant fondateur du parcours PC", "Physique Quantique & Histoire du Parcours PC", "30"],
+    ["Dr RANDRIANANDRAINA Faneva", "Enseignant fondateur du parcours PC", "Astrophysique", "15"],
+    ["M. RAJAONARIVELO Andoniaina", "Ancien Élève ENS, Directeur de l’observatoire de Besely", "Astronomie Observationnelle", "10"],
+    ["M. Herimampionona Zeze Franckie", "Président de l’association Sciences Physiques et Avenir", "Outreach & Education", "10"],
+    ["M. RAKOTOMANGA Mendrika", "Ancien Élève ENS, University of Leeds", "Intelligence Artificielle et Data Science", "10"],
+    ["Dr RATSIMANDRESY Dina Miora", "Ancienne Élève ENS, MRC-LMB, Cambridge", "Physique des Lasers & Biologie Moléculaire", "10"],
+    ["Equipe organisatrice", "N/A", "Cérémonie de remerciement", "15"],
+    ["Tous les Invités", "N/A", "Prise de Photo", "5"],
+    ["Tous les Invités", "N/A", "Cocktail", "30"],
+]
 
+# Generate HTML for the table
+table_html = """
+<table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+        <tr style="background-color: #4CAF50; color: white;">
+            <th>Intervenant</th>
+            <th>Affiliation</th>
+            <th>Thème</th>
+            <th>Durée (minutes)</th>
+        </tr>
+    </thead>
+    <tbody>
+"""
+for row in programme_data:
+    table_html += "<tr>"
+    for cell in row:
+        table_html += f"<td style='padding: 8px;'>{cell}</td>"
+    table_html += "</tr>"
 
+table_html += """
+    </tbody>
+</table>
+"""
 
-# Display the table as a DataFrame
-programme_df = pd.DataFrame(programme_data, index= 1 + np.arange(len(programme_data["Affiliation"])))
-
-# Styling the DataFrame
-def highlight_cells(val):
-    # Set background color based on conditions
-    return 'background-color: lightblue; color: black;'
-
-# Apply styling
-styled_df = programme_df.style.applymap(highlight_cells)
-
-styled_df.set_table_styles(
-    [{'selector': 'thead th', 
-      'props': [('background-color', '#4CAF50'), 
-                ('color', 'white'), 
-                ('font-size', '16px'), 
-                ('text-align', 'center')]},
-     {'selector': 'tbody th',  # Styling the index (row labels)
-      'props': [('background-color', '#f2f2f2'), 
-                ('color', 'black'), 
-                ('font-weight', 'bold'), 
-                ('font-size', '14px')]}],
-    axis=1
-)
-
-# Display the styled dataframe using st.table
-st.table(styled_df)
-
+# Display the table in Streamlit
+st.markdown(table_html, unsafe_allow_html=True)
 # Add Join Information
 st.markdown("## 🔗 Rejoindre le Séminaire")
 st.write(
@@ -210,6 +160,9 @@ st.write(
     Veuillez contacter mendrika@aims.ac.za ou andoniainarajaonari@gmail.com pour toutes requêtes.
     """
 )
+
+
+
 
 # Closing Content Div
 st.markdown('</div>', unsafe_allow_html=True)
