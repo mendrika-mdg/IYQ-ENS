@@ -54,7 +54,8 @@ logo_iyq = "./images/logo-horizontal-white-bg.png"
 logo_spa = "./images/logo-spa.png"                 
 logo_hk = "./images/logo-hk.png" 
 logo_aepcens = "./images/logo-aepcens-inverted.png"
-partners = "./images/partners-transformed.png"
+partners = "./images/partners-updated.png"
+logo_itatra = "./images/logo-itatra.png"
 
 st.image(partners, use_container_width=True)
 
@@ -73,7 +74,7 @@ description = (
     "Dans le cadre de cet événement, nous organisons une cérémonie pour honorer les membres fondateurs du parcours Physique-Chimie — **Dr Charles Ratsifaritana**, **Dr Faneva Randrianandraina**, **Dr René Rasoanaivo**, **Dr Henri Rasolondramanitra**, **Dr Herimanda Ramilison**, **Prof. Judith Razafimbelo** et **Prof. Kristiane Rakotobe** — pour leurs contributions inestimables à l’établissement de ce parcours à l’ENS Antananarivo. "
     "Leur vision collective et leur dévouement ont été déterminants dans la création d’une base académique solide, "
     "permettant à de nombreux étudiants de se former, de s’inspirer et, à leur tour, d’impacter les élèves malgaches. "
-    "Nous leur exprimons notre plus profonde gratitude."
+    "Nous aimerions leur exprimer notre plus profonde gratitude."
 )
 
 
@@ -185,9 +186,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-
-# Closing Content Div
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Fixed Footer
