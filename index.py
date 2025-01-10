@@ -135,7 +135,7 @@ st.write(
     """
     Le séminaire est hybride. Utilisez les liens ci-dessous pour rejoindre en ligne ou accéder à l'enregistrement :
 
-    - [Rejoindre via Zoom](#)
+    - [Rejoindre via Zoom](https://us02web.zoom.us/j/85923106189?pwd=8khEtmsE1WuSRLDkVyTg7aQOjlBFqb.1)
     - [Regarder l'Enregistrement (Disponible après l'événement)](#)
     """
 )
