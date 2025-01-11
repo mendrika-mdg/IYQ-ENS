@@ -147,7 +147,7 @@ st.markdown("""
     - Andoniaina Rajaonarivelo
     - Mendrika Rakotomanga
     - Zeze Franckie Herimampionona
-    - Francia Mamitahiry
+    - Francia Raheriniaina
     - Association des Etudiants en PC de l'ENS
     """)
 
