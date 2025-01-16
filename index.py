@@ -93,16 +93,15 @@ programme_data = [
     ["M. RAOGNINIRINA Joseph Carthy", "Président de l’AEPCENS", "Prise de parole", "5"],
     ["Représentant de l’ENS", "ENS", "Prise de parole", "5"],
     ["Dr RATSIFARITANA Charles", "Enseignant fondateur du parcours PC", "Physique Quantique & Histoire du Parcours PC", "30"],
+    ["Dr RATSIMANDRESY Dina Miora", "Ancienne Élève ENS, MRC-LMB, Cambridge", "Physique des Lasers & Biologie Moléculaire", "15"],
     ["Dr RANDRIANANDRAINA Faneva", "Enseignant fondateur du parcours PC", "Astrophysique", "15"],
-    ["M. RAJAONARIVELO Andoniaina", "Ancien Élève ENS, Directeur de l’observatoire de Besely", "Astronomie Observationnelle", "10"],
+    ["M. RAKOTOMANGA Mendrika", "Ancien Élève ENS, University of Leeds", "Intelligence Artificielle et Data Science", "15"],
     ["M. Herimampionona Zeze Franckie", "Président de l’association Sciences Physiques et Avenir", "Outreach & Education", "10"],
-    ["M. RAKOTOMANGA Mendrika", "Ancien Élève ENS, University of Leeds", "Intelligence Artificielle et Data Science", "10"],
-    ["Dr RATSIMANDRESY Dina Miora", "Ancienne Élève ENS, MRC-LMB, Cambridge", "Physique des Lasers & Biologie Moléculaire", "10"],
+    ["M. RAJAONARIVELO Andoniaina", "Ancien Élève ENS, Directeur de l’observatoire de Besely", "Astronomie Observationnelle", "10"],
     ["Equipe organisatrice", "N/A", "Cérémonie de remerciement", "15"],
     ["Tous les Invités", "N/A", "Prise de Photo", "5"],
     ["Tous les Invités", "N/A", "Cocktail", "30"],
 ]
-
 # Generate HTML for the table
 table_html = """
 <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
