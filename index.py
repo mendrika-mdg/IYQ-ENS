@@ -136,6 +136,8 @@ st.write(
 
     - [Rejoindre via Zoom](https://us02web.zoom.us/j/85923106189?pwd=8khEtmsE1WuSRLDkVyTg7aQOjlBFqb.1)
     - [Regarder l'Enregistrement (Disponible après l'événement)](#)
+    - [Slides](https://drive.google.com/drive/folders/13aLk3q9WhGU4HK-CW3Lwo_W-n8UHQkcS?usp=sharing)
+    - [Photos](https://drive.google.com/drive/folders/1EyZiJNsFF8WvdHyh7YZSewd7pGhsgyvT?usp=drive_link)
     """
 )
 
